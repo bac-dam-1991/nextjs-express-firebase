@@ -314,3 +314,53 @@ const About = () => {
 
 export default About;
 ```
+
+Converting to Typescript
+
+Create `tsconfig.json` file in root directory.
+
+Change `.jsx` files to `.tsx`
+
+```tsx
+import * as React from "react";
+
+export interface HomePageProps {}
+
+const HomePage: React.FC<HomePageProps> = () => {
+	return <div>Home Page</div>;
+};
+
+export default HomePage;
+```
+
+```tsx
+import * as React from "react";
+
+export interface HomePageProps {}
+
+const AboutPage: React.FC<AboutPageProps> = () => {
+	return <div>About Page</div>;
+};
+
+export default AboutPage;
+```
+
+Add `_app.tsx` file in `./pages` directory as root App
+
+```tsx
+import * as React from "react";
+
+import { AppProps } from "next/app";
+
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+	return <Component {...pageProps} />;
+};
+
+export default App;
+```
+
+Install `typescript` and `@types/react` as development dependencies
+
+```bash
+npm i -D typescript @types/react
+```
