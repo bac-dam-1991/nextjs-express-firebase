@@ -1,0 +1,32 @@
+{
+	"name": "nextjs-express-firebase",
+	"version": "1.0.0",
+	"description": "NextJs Typescript application with custom server via ExpressJs on Firebase Clouds and Hosting.",
+	"author": "Bac Trach Dam",
+	"main": "server.js",
+	"scripts": {
+		"clean": "rimraf nextjs/",
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"predeploy": "npm run clean && next build",
+		"deploy": "firebase deploy"
+	},
+	"engines": {
+		"node": "12"
+	},
+	"keywords": [],
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.17.1",
+		"firebase": "^8.2.1",
+		"firebase-admin": "^9.4.2",
+		"firebase-functions": "^3.13.0",
+		"next": "^9.5.4",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
+	},
+	"devDependencies": {
+		"rimraf": "^3.0.2"
+	}
+}
